@@ -1,3 +1,56 @@
+# 🚗 Directional Collision Anticipation AI
+
+<p align="center">
+  <strong>AI-powered video analysis system for detecting, tracking, and anticipating potential road collisions.</strong>
+</p>
+
+<p align="center">
+  From <b>Detecting Objects</b> → <b>Tracking Movement</b> → <b>Understanding Direction</b> → <b>Predicting Risk</b> → <b>Warning the Driver</b>
+</p>
+
+<p align="center">
+  <a href="https://github.com/AlthafShaik15/directional-collision-anticipation-ai">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub">
+  </a>
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
+  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-Frontend-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/YOLO-Object%20Detection-111111?style=for-the-badge" alt="YOLO">
+  <img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV">
+  <img src="https://img.shields.io/badge/ByteTrack-Multi--Object%20Tracking-orange?style=for-the-badge" alt="ByteTrack">
+  <img src="https://img.shields.io/badge/Tests-PyTest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="PyTest">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+</p>
+
+---
+
+## 📌 Overview
+
+**Directional Collision Anticipation AI** is a computer-vision-based system designed to analyze road or dashcam video and estimate whether nearby road users may create a potential collision risk.
+
+Instead of simply detecting vehicles or pedestrians, the system follows a complete analysis pipeline:
+
+```text
+Video Input
+     ↓
+Object Detection
+     ↓
+Object Tracking
+     ↓
+Motion Analysis
+     ↓
+Direction Understanding
+     ↓
+Trajectory Prediction
+     ↓
+Collision Analysis
+     ↓
+Risk Scoring
+     ↓
+Primary Threat Detection
+     ↓
+Driver Warning / Voice Alert
 # AI-Driven Directional Collision Anticipation System
 
 > An intelligent driver assistance system that predicts and alerts drivers about potential collisions from multiple directions in real-time Indian mixed-traffic conditions.
