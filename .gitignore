@@ -1,0 +1,72 @@
+# TypeScript / Frontend build outputs
+lib/
+dist/
+build/
+
+# Dependencies
+node_modules/
+.pnp.*
+pnpm-lock.yaml
+yarn.lock
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large data files
+data/*/
+output/*/
+
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Python cache / compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Model files
+*.pt
+*.pth
+
+# Videos
+*.mp4
+*.avi
+*.mkv
+*.webm
+
+# Server / PID files
+.server_pid_backend
+.server_pid_frontend
+
+# Vercel
+.vercel/
+
+# TypeScript build cache
+tsconfig*.tsbuildinfo
