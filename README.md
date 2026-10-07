@@ -1,360 +1,137 @@
 # 🚗 Directional Collision Anticipation AI
 
 <p align="center">
-  <strong>AI-powered video analysis system for detecting, tracking, and anticipating potential road collisions.</strong>
+  <strong>AI-powered system that detects, tracks, and anticipates potential road collisions from video.</strong>
 </p>
 
 <p align="center">
-  From <b>Detecting Objects</b> → <b>Tracking Movement</b> → <b>Understanding Direction</b> → <b>Predicting Risk</b> → <b>Warning the Driver</b>
+  Detect → Track → Understand → Predict → Assess Risk → Alert
 </p>
 
 <p align="center">
-  <a href="https://github.com/AlthafShaik15/directional-collision-anticipation-ai">
-    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub">
-  </a>
-  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
-  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
-  <img src="https://img.shields.io/badge/TypeScript-Frontend-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/YOLO-Object%20Detection-111111?style=for-the-badge" alt="YOLO">
-  <img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV">
-  <img src="https://img.shields.io/badge/ByteTrack-Multi--Object%20Tracking-orange?style=for-the-badge" alt="ByteTrack">
-  <img src="https://img.shields.io/badge/Tests-PyTest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="PyTest">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+
+<a href="https://github.com/AlthafShaik15/directional-collision-anticipation-ai">
+<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub">
+</a>
+
+<img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+
+<img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
+
+<img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
+
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+
+<img src="https://img.shields.io/badge/YOLOv11-Object%20Detection-111111?style=for-the-badge" alt="YOLOv11">
+
+<img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV">
+
+<img src="https://img.shields.io/badge/ByteTrack-Object%20Tracking-orange?style=for-the-badge" alt="ByteTrack">
+
+<img src="https://img.shields.io/badge/PyTest-Testing-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="PyTest">
+
+<img src="https://img.shields.io/badge/SIH-2026-FF6B00?style=for-the-badge" alt="SIH">
+
 </p>
 
 ---
 
-## 📌 Overview
+## 📌 About the Project
 
-**Directional Collision Anticipation AI** is a computer-vision-based system designed to analyze road or dashcam video and estimate whether nearby road users may create a potential collision risk.
+**Directional Collision Anticipation AI** is a computer-vision-based system that analyzes road and dashcam videos to identify objects, understand their movement, predict their future paths, and estimate potential collision risks.
 
-Instead of simply detecting vehicles or pedestrians, the system follows a complete analysis pipeline:
+Instead of only asking:
+
+> **"What objects are visible?"**
+
+the system tries to answer:
+
+> **"Which object could become a threat, from which direction, and how serious is the situation?"**
+
+The project is designed as a **software-only simulation prototype for Smart India Hackathon (SIH)** and focuses on Indian mixed-traffic scenarios.
+
+---
+
+## 🎯 Problem
+
+Road traffic in India can involve many different road users moving in unpredictable ways:
+
+- 🚗 Cars
+- 🏍️ Motorcycles
+- 🚌 Buses
+- 🚚 Trucks
+- 🚶 Pedestrians
+- 🚲 Bicycles
+
+Common challenges include:
+
+- Unpredictable vehicle movements
+- Lane violations
+- Sudden lane changes
+- Dense mixed traffic
+- Pedestrians and motorcycles sharing road space
+- Vehicles approaching from different directions
+
+A simple object detector can identify a pedestrian or vehicle, but detection alone does not tell us whether that object is becoming a collision threat.
+
+This project adds **tracking, motion analysis, direction reasoning, trajectory prediction, and risk assessment** to move from simple detection toward collision anticipation.
+
+---
+
+# 🧠 How It Works
+
+The system follows this pipeline:
 
 ```text
-Video Input
-     ↓
-Object Detection
-     ↓
-Object Tracking
-     ↓
-Motion Analysis
-     ↓
-Direction Understanding
-     ↓
-Trajectory Prediction
-     ↓
-Collision Analysis
-     ↓
-Risk Scoring
-     ↓
-Primary Threat Detection
-     ↓
-Driver Warning / Voice Alert
-# AI-Driven Directional Collision Anticipation System
-
-> An intelligent driver assistance system that predicts and alerts drivers about potential collisions from multiple directions in real-time Indian mixed-traffic conditions.
-
----
-
-## Problem Overview
-
-Indian roads are among the most dangerous in the world, characterized by highly heterogeneous mixed traffic including cars, motorcycles, buses, trucks, pedestrians, and bicycles moving in unpredictable patterns. Existing collision avoidance systems are designed for structured Western traffic and fail to handle the complexity of Indian road conditions.
-
-**Key Challenges:**
-- Mixed traffic with diverse road user types
-- Unpredictable lateral movements and lane violations
-- High density of vulnerable road users (motorcycles, pedestrians)
-- Lack of structured lane discipline
-- Need for direction-aware collision anticipation
-
----
-
-## Proposed Solution
-
-The **AI-Driven Directional Collision Anticipation System** is a software-only simulation prototype that processes dashcam video to detect, track, predict, and warn about potential collisions from multiple directions.
-
-The system implements a complete pipeline:
-
-```
-Traffic Video → Frame Processing → Object Detection → Multi-Object Tracking
-→ Motion Analysis → Trajectory Generation → Future Prediction
-→ Conflict Detection → TTC Calculation → Risk Scoring
-→ Threat Ranking → Directional Reasoning → Driver Response Simulation
-→ Inaction Gating → Smart Collision Alert → Dashboard
-```
-
----
-
-## Features
-
-| Feature | Description |
-|---------|-------------|
-| **Multi-Object Detection** | YOLO v11-based detection (yolo11n.pt) of cars, motorcycles, buses, trucks, pedestrians, bicycles |
-| **Stable Tracking** | ByteTrack-based identity assignment and tracking across frames |
-| **Motion Analysis** | Velocity, heading, and approach/recede classification |
-| **Trajectory Prediction** | Multi-horizon future position prediction (0.5s, 1s, 2s) |
-| **TTC Estimation** | Time-to-collision calculation using velocity projection |
-| **Risk Scoring** | Multi-factor severity calculation (TTC, distance, speed, path intersection) |
-| **Threat Ranking** | Priority-based threat identification and primary threat selection |
-| **Directional Alerts** | LEFT / AHEAD / RIGHT threat classification |
-| **Inaction Gate** | Intelligent alert suppression when driver is responding |
-| **Modern Web Dashboard** | React + TypeScript interface with live video, metrics, and controls |
-
----
-
-## System Architecture
-
-```
-+--------------------+     +-------------------+     +------------------+
-|   Video Input      | --> |   Detection       | --> |   Tracking       |
-|   (Dashcam)        |     |   (YOLO v11)      |     |   (ByteTrack)    |
-+--------------------+     +-------------------+     +------------------+
-                                                            |
-                                                            v
-+--------------------+     +-------------------+     +------------------+
-|   React Web UI     | <-- |   FastAPI         | <-- |   Motion         |
-|   (TypeScript /    |     |   Integration     |     |   Analysis       |
-|    Vite / Tailwind)|     |   Layer           |     |                  |
-+--------------------+     +-------------------+     +------------------+
-                                                            |
-                                                            v
-+--------------------+     +-------------------+     +------------------+
-|   Direction        | <-- |   Risk & Threat   | <-- |   Collision      |
-|   Reasoning        |     |   Assessment      |     |   Detection      |
-+--------------------+     +-------------------+     +------------------+
-```
-
----
-
-## Technology Stack
-
-### Backend (Python AI)
-| Technology | Purpose |
-|------------|---------|
-| **Python** | Core programming language |
-| **OpenCV** | Video processing and frame manipulation |
-| **Ultralytics YOLO** | Object detection (YOLOv11, yolo11n.pt) |
-| **ByteTrack** | Multi-object tracking |
-| **NumPy** | Numerical computations |
-| **Pandas** | Data handling and manipulation |
-| **SciPy** | Scientific computing utilities |
-| **FastAPI** | HTTP/WebSocket API exposing the AI pipeline |
-
-### Frontend (Web)
-| Technology | Purpose |
-|------------|---------|
-| **React 18** | UI library |
-| **TypeScript** | Type-safe source |
-| **Vite** | Dev server / bundler |
-| **Tailwind CSS** | Utility-first styling |
-| **Lucide React** | Icon set |
-
----
-
-## Project Structure
-
-```
-AI_Collision_Anticipation/
-│
-├── api/                     # FastAPI integration layer
-│   ├── main.py              # HTTP + WebSocket endpoints
-│   └── risk_color.py        # Risk-level color helper
-│
-├── frontend/                # React + TypeScript + Vite + Tailwind
-│   ├── src/
-│   │   ├── components/      # Header, VideoSection, CurrentThreat, etc.
-│   │   ├── App.tsx
-│   │   ├── api.ts
-│   │   ├── types.ts
-│   │   └── main.tsx
-│   ├── index.html
-│   ├── package.json
-│   ├── tailwind.config.js
-│   ├── tsconfig.json
-│   └── vite.config.ts
-│
-├── config/                  # Centralized configuration
-│   ├── settings.py          # Application settings
-│   ├── thresholds.py        # Tunable collision thresholds
-│   └── dataset_config.py
-│
-├── data/                    # Input data
-│   ├── uploads/             # User-uploaded videos
-│   ├── positive/            # Positive test videos
-│   ├── negative/            # Negative test videos
-│   └── indian_traffic/      # Indian traffic videos
-│
-├── models/                  # YOLO model weights
-│
-├── src/                     # Core AI processing modules (UNCHANGED)
-│   ├── detection/           # Object detection (YOLO)
-│   ├── tracking/            # Multi-object tracking (ByteTrack)
-│   ├── motion/              # Motion analysis and trajectories
-│   ├── prediction/          # Future position prediction
-│   ├── collision/           # Conflict detection and TTC
-│   ├── risk/                # Severity scoring and threat ranking
-│   ├── direction/           # Directional reasoning
-│   ├── driver_response/     # Driver simulation and inaction gate
-│   ├── alerts/              # Alert generation and warning logic
-│   ├── dataset/             # Dataset manager + test runner
-│   ├── pipeline/            # Extracted pipeline orchestration
-│   │   └── processor.py     # process_video() — no UI dependencies
-│   └── utils/               # Utilities (video, geometry, viz, logging)
-│
-├── output/                  # Generated outputs
-│   ├── processed_videos/
-│   ├── screenshots/
-│   ├── reports/
-│   ├── dataset_tests/
-│   └── logs/
-│
-├── tests/                   # Unit test suite
-│
-└── docs/                    # Documentation
-```
-
----
-
-## Installation
-
-### Prerequisites
-
-- Python 3.9 or higher
-- Node.js 18+ and npm
-- pip package manager
-- Git
-
-### Backend Setup
-
-```bash
-git clone <repository-url>
-cd AI_Collision_Anticipation
-
-python -m venv venv
-# Windows:
-venv\Scripts\activate
-# Linux/Mac:
-source venv/bin/activate
-
-pip install -r requirements.txt
-copy .env.example .env
-# YOLO model file yolo11n.pt is already in the project root
-```
-
-### Frontend Setup
-
-```bash
-cd frontend
-npm install
-cd ..
-```
-
----
-
-## How to Run
-
-You need **two processes** — one for the backend API and one for the frontend dev server.
-
-### 1) Start the backend (FastAPI)
-
-```bash
-# From the project root
-uvicorn api.main:app --host 0.0.0.0 --port 8000
-```
-
-The API serves:
-- `POST /api/upload` — upload a video (mp4, avi, mov, mkv, webm; validated via OpenCV probe)
-- `POST /api/process` — start a processing job
-- `GET /api/jobs/{id}` — poll a job (polling fallback when WebSocket is unavailable)
-- `WS /ws/jobs/{id}` — live progress stream
-- `GET /api/videos/{filename}` — annotated output video (also serves uploads by saved filename)
-- `GET /api/source?path=<abs>` — original/source video playback (path must resolve inside `data/`)
-- `POST /api/csv_report` — generate analysis CSV
-- `GET /api/dataset/summary` — discover dataset
-- `POST /api/dataset/random` — random pick
-- `POST /api/dataset/test` — run dataset test (returns a job id)
-
-### 2) Start the frontend (Vite dev server)
-
-```bash
-cd frontend
-npm run dev
-```
-
-Open <http://localhost:5173>.
-
-### Run Tests
-
-```bash
-pytest tests/ -v
-```
-
-### Production Build (frontend)
-
-```bash
-cd frontend
-npm run build
-```
-
----
-
-## Current Prototype Scope
-
-This is a **software-only simulation prototype** designed for SIH hackathon demonstration.
-
-**Recorded traffic videos are used as simulated dashcam input in the current software prototype.**
-
-| Aspect | Status |
-|--------|--------|
-| Object Detection | YOLO v11 on recorded video |
-| Multi-Object Tracking | ByteTrack simulation |
-| Driver Response | Simulated (manual/automatic) |
-| Hardware Integration | NOT included |
-| Real-time Sensors | NOT included |
-| CAN Bus Access | NOT included |
-| Actuator Control | NOT included |
-
----
-
-## Future Hardware Deployment Scope
-
-The system architecture is designed for future hardware deployment:
-
-| Future Feature | Description |
-|----------------|-------------|
-| **Real Dashcam Input** | Live video from vehicle-mounted camera |
-| **CAN Bus Integration** | Real-time vehicle speed and steering data |
-| **GPS/IMU Integration** | Vehicle position and orientation |
-| **ADAS Actuators** | Automatic braking and steering intervention |
-| **V2X Communication** | Vehicle-to-infrastructure data exchange |
-| **Edge Computing** | On-board NVIDIA Jetson or similar |
-| **Multi-Camera Setup** | 360-degree situational awareness |
-| **Night/Rain Vision** | Enhanced perception in adverse conditions |
-
----
-
-## Demo Scenarios
-
-See [docs/demo_scenarios.md](docs/demo_scenarios.md) for detailed scenario descriptions including:
-
-1. **Motorcycle Lane Cut-In** - Right-side approach
-2. **Pedestrian Crossing** - Ahead crossing
-3. **Vehicle Merge** - Aggressive merge from on-ramp
-4. **Mixed Traffic Weaving** - Multiple simultaneous threats
-
----
-
-## License
-
-This project is developed for SIH hackathon demonstration purposes.
-
----
-
-## Acknowledgments
-
-- **Smart India Hackathon** for the problem statement
-- **Ultralytics** for YOLO v11
-- **ByteTrack** for multi-object tracking
-- **FastAPI** for the API framework
-- **React + Vite + Tailwind** for the dashboard framework
+                 ROAD / DASHCAM VIDEO
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ Object Detection│
+                │     YOLOv11     │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ Object Tracking │
+                │   ByteTrack     │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ Motion Analysis │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │    Direction    │
+                │    Reasoning    │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │    Trajectory   │
+                │    Prediction   │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │    Collision    │
+                │    Analysis     │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │   Risk Scoring  │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ Threat Ranking  │
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ Driver Warning  │
+                │ / Voice Alert   │
+                └─────────────────┘
